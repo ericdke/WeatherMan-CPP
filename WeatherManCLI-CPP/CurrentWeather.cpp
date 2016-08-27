@@ -19,7 +19,7 @@ float CurrentWeather::wind_speed_kmh()
 string CurrentWeather::wind_direction_compass()
 {
     vector<string> compass = {"Nord","Nord Nord-Est","Nord-Est","Est-Nord-Est","Est","Est-Sud-Est","Sud-Est","Sud-Sud-Est","Sud","Sud-Sud-Ouest","Sud-Ouest","Ouest-Sud-Ouest","Ouest","Ouest-Nord-Ouest","Nord-Ouest","Nord-Nord-Ouest"};
-    double sp = (((double) wind_speed) / 22.5) + 0.5;
+    double sp = (((double) wind_direction) / 22.5) + 0.5;
     int index = fmod(sp, 16);
     return compass[index];
 }

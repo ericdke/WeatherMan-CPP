@@ -15,7 +15,7 @@
 
 class Utilities {
 public:
-    static std::string float_to_string(float f, int p); // float, precision
+    static std::string float_to_string(float const& f, int const& p); // float, precision
 };
 
 #endif /* Utilities_hpp */

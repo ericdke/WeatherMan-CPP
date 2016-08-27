@@ -13,7 +13,7 @@
 using namespace std;
 using namespace boost::property_tree;
 
-CurrentWeather JSONReader::parse(string json)
+CurrentWeather JSONReader::parse(string const& json)
 {
     istringstream j(json);
     read_json(j, tree);
@@ -21,7 +21,7 @@ CurrentWeather JSONReader::parse(string json)
     weather.city = tree.get_child("name").get_value<string>();
     weather.country = tree.get_child("sys.country").get_value<string>();
     weather.wind_speed = tree.get_child("wind.speed").get_value<float>();
-    weather.wind_direction = tree.get_child("wind.deg").get_value<int>();
+    weather.wind_direction = tree.get_child("wind.deg").get_value<float>();
     BOOST_FOREACH(ptree::value_type& obj, tree.get_child("weather"))
     {
         weather.category = obj.second.get_child("main").get_value<string>();

@@ -29,7 +29,7 @@ public:
     std::string sub_category;
     std::string icon_url;
     float wind_speed;
-    int wind_direction;
+    float wind_direction;
     float wind_speed_kmh();
     std::string wind_direction_compass();
     std::string description();
