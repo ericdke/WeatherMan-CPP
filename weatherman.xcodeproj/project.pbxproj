@@ -74,12 +74,12 @@
 			isa = PBXGroup;
 			children = (
 				C715B27B1D71A663008A0A40 /* main.cpp */,
-				C715B2821D71A6C5008A0A40 /* Downloader.cpp */,
-				C715B2831D71A6C5008A0A40 /* Downloader.hpp */,
-				C715B28A1D71B4DB008A0A40 /* JSONReader.cpp */,
 				C715B28B1D71B4DB008A0A40 /* JSONReader.hpp */,
-				C715B28D1D71BC51008A0A40 /* CurrentWeather.cpp */,
+				C715B28A1D71B4DB008A0A40 /* JSONReader.cpp */,
 				C715B28E1D71BC51008A0A40 /* CurrentWeather.hpp */,
+				C715B28D1D71BC51008A0A40 /* CurrentWeather.cpp */,
+				C715B2831D71A6C5008A0A40 /* Downloader.hpp */,
+				C715B2821D71A6C5008A0A40 /* Downloader.cpp */,
 			);
 			name = weatherman;
 			path = "WeatherManCLI-CPP";

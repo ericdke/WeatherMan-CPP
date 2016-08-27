@@ -23,6 +23,7 @@
 #include <curl/curlbuild.h>
 #include <sstream>
 #include <iostream>
+
 /**
  * A non-threadsafe simple libcURL-easy based HTTP downloader
  */

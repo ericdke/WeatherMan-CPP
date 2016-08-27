@@ -16,8 +16,8 @@ using namespace std;
 
 int main(int argc, const char * argv[])
 {
-    JSONReader reader;
     HTTPDownloader downloader;
+    JSONReader reader;
     string url = downloader.makeURL(argc, argv);
     if (url != "")
     {
@@ -26,11 +26,12 @@ int main(int argc, const char * argv[])
         cout << weather.temp << endl;
         cout << weather.city << endl;
         cout << weather.country << endl;
-        cout << weather.wind_speed << endl;
-        cout << weather.wind_direction << endl;
+        cout << weather.wind_speed_kmh() << endl;
+        cout << weather.wind_direction_compass() << endl;
         cout << weather.category << endl;
         cout << weather.sub_category << endl;
         cout << weather.icon_url << endl;
+        cout << weather.description() << endl;
         return 0;
     }
     else

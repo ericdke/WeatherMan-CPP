@@ -18,9 +18,14 @@ public:
     std::string country;
     std::string category;
     std::string sub_category;
+    std::string icon_url;
     float wind_speed;
     int wind_direction;
-    std::string icon_url;
+    float wind_speed_kmh();
+    std::string wind_direction_compass();
+    std::string description();
+private:
+    std::string date_formatted();
 };
 
 #endif /* CurrentWeather_hpp */
