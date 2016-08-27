@@ -18,7 +18,7 @@
 class JSONReader {
 public:
     CurrentWeather parse(std::string const& json);
-    void print_source();
+    const void print_source();
 private:
     std::string source;
     boost::property_tree::ptree tree;

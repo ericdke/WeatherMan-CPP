@@ -13,16 +13,17 @@ using namespace std;
 
 int main(int argc, const char * argv[])
 {
+    cout << "\nCreating request..." << endl;
     HTTPDownloader downloader;
     string url = downloader.makeURL(argc, argv);
     if (url != "")
     {
-        cout << "Downloading..." << endl;
+        cout << "Downloading data..." << endl;
         string content = downloader.download(url);
         JSONReader reader;
-        cout << "Parsing..." << endl;
+        cout << "Parsing response..." << endl;
         CurrentWeather weather = reader.parse(content);
-        cout << "Result:\n" << endl;
+        cout << "\nResult:\n" << endl;
         cout << weather.description() << endl;
         return 0;
     }

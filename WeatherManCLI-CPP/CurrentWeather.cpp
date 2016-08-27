@@ -19,8 +19,8 @@ float CurrentWeather::wind_speed_kmh()
 string CurrentWeather::wind_direction_compass()
 {
     vector<string> compass = {"Nord","Nord Nord-Est","Nord-Est","Est-Nord-Est","Est","Est-Sud-Est","Sud-Est","Sud-Sud-Est","Sud","Sud-Sud-Ouest","Sud-Ouest","Ouest-Sud-Ouest","Ouest","Ouest-Nord-Ouest","Nord-Ouest","Nord-Nord-Ouest"};
-    double sp = (((double) wind_direction) / 22.5) + 0.5;
-    int index = fmod(sp, 16);
+    float wd = (wind_direction / 22.5) + 0.5;
+    int index = fmod(wd, 16);
     return compass[index];
 }
 
@@ -34,7 +34,7 @@ string CurrentWeather::description()
     string ca = ci + te + "Temps: " + category + " (" + sub_category + ").\n";
     // TODO: check if wind
     string w = Utilities::float_to_string(wind_speed_kmh(), 1);
-    string desc = ca + "Vent: " + wind_direction_compass() + " à " + w + " km/h.";
+    string desc = ca + "Vent: " + wind_direction_compass() + " à " + w + " km/h.\n";
     return desc;
 }
 

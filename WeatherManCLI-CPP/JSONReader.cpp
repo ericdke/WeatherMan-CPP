@@ -31,7 +31,7 @@ CurrentWeather JSONReader::parse(string const& json)
     return weather;
 }
 
-void JSONReader::print_source()
+const void JSONReader::print_source()
 {
     print(tree);
 }
