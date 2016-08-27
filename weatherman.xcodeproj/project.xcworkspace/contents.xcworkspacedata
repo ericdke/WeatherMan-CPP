@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:WeatherManCLI-CPP.xcodeproj">
+      location = "self:/Users/ericdejonckheere/DEV/CPP/WeatherManCLI-CPP/weatherman.xcodeproj">
    </FileRef>
 </Workspace>

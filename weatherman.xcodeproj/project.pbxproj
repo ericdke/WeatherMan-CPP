@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C715B27C1D71A663008A0A40 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715B27B1D71A663008A0A40 /* main.cpp */; };
+		C715B2841D71A6C5008A0A40 /* Downloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715B2821D71A6C5008A0A40 /* Downloader.cpp */; };
+		C715B2871D71A6FC008A0A40 /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C715B2861D71A6FC008A0A40 /* libcurl.tbd */; };
+		C715B2891D71A7E6008A0A40 /* libboost_serialization.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C715B2881D71A7E6008A0A40 /* libboost_serialization.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C715B2781D71A663008A0A40 /* WeatherManCLI-CPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "WeatherManCLI-CPP"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C715B2781D71A663008A0A40 /* weatherman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = weatherman; sourceTree = BUILT_PRODUCTS_DIR; };
 		C715B27B1D71A663008A0A40 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C715B2821D71A6C5008A0A40 /* Downloader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Downloader.cpp; sourceTree = "<group>"; };
+		C715B2831D71A6C5008A0A40 /* Downloader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Downloader.hpp; sourceTree = "<group>"; };
+		C715B2861D71A6FC008A0A40 /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
+		C715B2881D71A7E6008A0A40 /* libboost_serialization.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_serialization.a; path = ../../../../../usr/local/Cellar/boost/1.59.0/lib/libboost_serialization.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C715B2891D71A7E6008A0A40 /* libboost_serialization.a in Frameworks */,
+				C715B2871D71A6FC008A0A40 /* libcurl.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,33 +50,46 @@
 		C715B26F1D71A663008A0A40 = {
 			isa = PBXGroup;
 			children = (
-				C715B27A1D71A663008A0A40 /* WeatherManCLI-CPP */,
+				C715B27A1D71A663008A0A40 /* weatherman */,
 				C715B2791D71A663008A0A40 /* Products */,
+				C715B2851D71A6FC008A0A40 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		C715B2791D71A663008A0A40 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C715B2781D71A663008A0A40 /* WeatherManCLI-CPP */,
+				C715B2781D71A663008A0A40 /* weatherman */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C715B27A1D71A663008A0A40 /* WeatherManCLI-CPP */ = {
+		C715B27A1D71A663008A0A40 /* weatherman */ = {
 			isa = PBXGroup;
 			children = (
 				C715B27B1D71A663008A0A40 /* main.cpp */,
+				C715B2821D71A6C5008A0A40 /* Downloader.cpp */,
+				C715B2831D71A6C5008A0A40 /* Downloader.hpp */,
 			);
+			name = weatherman;
 			path = "WeatherManCLI-CPP";
+			sourceTree = "<group>";
+		};
+		C715B2851D71A6FC008A0A40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C715B2881D71A7E6008A0A40 /* libboost_serialization.a */,
+				C715B2861D71A6FC008A0A40 /* libcurl.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C715B2771D71A663008A0A40 /* WeatherManCLI-CPP */ = {
+		C715B2771D71A663008A0A40 /* weatherman */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C715B27F1D71A663008A0A40 /* Build configuration list for PBXNativeTarget "WeatherManCLI-CPP" */;
+			buildConfigurationList = C715B27F1D71A663008A0A40 /* Build configuration list for PBXNativeTarget "weatherman" */;
 			buildPhases = (
 				C715B2741D71A663008A0A40 /* Sources */,
 				C715B2751D71A663008A0A40 /* Frameworks */,
@@ -77,9 +99,9 @@
 			);
 			dependencies = (
 			);
-			name = "WeatherManCLI-CPP";
+			name = weatherman;
 			productName = "WeatherManCLI-CPP";
-			productReference = C715B2781D71A663008A0A40 /* WeatherManCLI-CPP */;
+			productReference = C715B2781D71A663008A0A40 /* weatherman */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +119,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C715B2731D71A663008A0A40 /* Build configuration list for PBXProject "WeatherManCLI-CPP" */;
+			buildConfigurationList = C715B2731D71A663008A0A40 /* Build configuration list for PBXProject "weatherman" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -109,7 +131,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C715B2771D71A663008A0A40 /* WeatherManCLI-CPP */,
+				C715B2771D71A663008A0A40 /* weatherman */,
 			);
 		};
 /* End PBXProject section */
@@ -119,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C715B2841D71A6C5008A0A40 /* Downloader.cpp in Sources */,
 				C715B27C1D71A663008A0A40 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +239,11 @@
 		C715B2801D71A663008A0A40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.59.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -223,6 +251,11 @@
 		C715B2811D71A663008A0A40 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.59.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -230,7 +263,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C715B2731D71A663008A0A40 /* Build configuration list for PBXProject "WeatherManCLI-CPP" */ = {
+		C715B2731D71A663008A0A40 /* Build configuration list for PBXProject "weatherman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C715B27D1D71A663008A0A40 /* Debug */,
@@ -239,7 +272,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C715B27F1D71A663008A0A40 /* Build configuration list for PBXNativeTarget "WeatherManCLI-CPP" */ = {
+		C715B27F1D71A663008A0A40 /* Build configuration list for PBXNativeTarget "weatherman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C715B2801D71A663008A0A40 /* Debug */,
