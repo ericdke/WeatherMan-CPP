@@ -7,43 +7,35 @@
 //
 
 #include "Downloader.hpp"
+#include "JSONReader.hpp"
+#include "CurrentWeather.hpp"
 #include <iostream>
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/foreach.hpp>
 using namespace std;
 
-string makeURL(int argc, const char * argv[])
-{
-    if(argc > 1)
-    {
-        string input;
-        for(int i = 1; i < argc; i++) {
-            input += argv[i];
-        }
-        string url = "http://api.openweathermap.org/data/2.5/weather?q="
-                    + input
-                    + "&appid=d21991d7851f849bfe8cc24d12c795d0&units=metric&lang=fr";
-        return url;
-    }
-    else
-    {
-        return "";
-    }
-}
-
 int main(int argc, const char * argv[])
 {
-    string url = makeURL(argc, argv);
+    JSONReader reader;
+    HTTPDownloader downloader;
+    string url = downloader.makeURL(argc, argv);
     if (url != "")
     {
-        HTTPDownloader downloader;
         string content = downloader.download(url);
-        cout << content << endl;
+        CurrentWeather weather = reader.parse(content);
+        cout << weather.temp << endl;
+        cout << weather.city << endl;
+        cout << weather.country << endl;
+        cout << weather.wind_speed << endl;
+        cout << weather.wind_direction << endl;
+        cout << weather.category << endl;
+        cout << weather.sub_category << endl;
+        cout << weather.icon_url << endl;
         return 0;
     }
     else
     {
-        cout << "Usage: weatherman city,country" << endl;
+        cout << "Usage:\n\tweatherman city,country" << endl;
         return 1;
     }
 }

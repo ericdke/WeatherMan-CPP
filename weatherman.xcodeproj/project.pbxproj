@@ -11,6 +11,8 @@
 		C715B2841D71A6C5008A0A40 /* Downloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715B2821D71A6C5008A0A40 /* Downloader.cpp */; };
 		C715B2871D71A6FC008A0A40 /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C715B2861D71A6FC008A0A40 /* libcurl.tbd */; };
 		C715B2891D71A7E6008A0A40 /* libboost_serialization.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C715B2881D71A7E6008A0A40 /* libboost_serialization.a */; };
+		C715B28C1D71B4DB008A0A40 /* JSONReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715B28A1D71B4DB008A0A40 /* JSONReader.cpp */; };
+		C715B28F1D71BC51008A0A40 /* CurrentWeather.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715B28D1D71BC51008A0A40 /* CurrentWeather.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +34,10 @@
 		C715B2831D71A6C5008A0A40 /* Downloader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Downloader.hpp; sourceTree = "<group>"; };
 		C715B2861D71A6FC008A0A40 /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
 		C715B2881D71A7E6008A0A40 /* libboost_serialization.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_serialization.a; path = ../../../../../usr/local/Cellar/boost/1.59.0/lib/libboost_serialization.a; sourceTree = "<group>"; };
+		C715B28A1D71B4DB008A0A40 /* JSONReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONReader.cpp; sourceTree = "<group>"; };
+		C715B28B1D71B4DB008A0A40 /* JSONReader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = JSONReader.hpp; sourceTree = "<group>"; };
+		C715B28D1D71BC51008A0A40 /* CurrentWeather.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CurrentWeather.cpp; sourceTree = "<group>"; };
+		C715B28E1D71BC51008A0A40 /* CurrentWeather.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CurrentWeather.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,10 @@
 				C715B27B1D71A663008A0A40 /* main.cpp */,
 				C715B2821D71A6C5008A0A40 /* Downloader.cpp */,
 				C715B2831D71A6C5008A0A40 /* Downloader.hpp */,
+				C715B28A1D71B4DB008A0A40 /* JSONReader.cpp */,
+				C715B28B1D71B4DB008A0A40 /* JSONReader.hpp */,
+				C715B28D1D71BC51008A0A40 /* CurrentWeather.cpp */,
+				C715B28E1D71BC51008A0A40 /* CurrentWeather.hpp */,
 			);
 			name = weatherman;
 			path = "WeatherManCLI-CPP";
@@ -142,6 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C715B2841D71A6C5008A0A40 /* Downloader.cpp in Sources */,
+				C715B28C1D71B4DB008A0A40 /* JSONReader.cpp in Sources */,
+				C715B28F1D71BC51008A0A40 /* CurrentWeather.cpp in Sources */,
 				C715B27C1D71A663008A0A40 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

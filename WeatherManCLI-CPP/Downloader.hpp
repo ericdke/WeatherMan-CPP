@@ -36,6 +36,7 @@ public:
      * @return The download result
      */
     std::string download(const std::string& url);
+    std::string makeURL(int argc, const char * argv[]);
 private:
     void* curl;
 };

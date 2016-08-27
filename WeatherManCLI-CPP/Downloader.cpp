@@ -50,3 +50,22 @@ string HTTPDownloader::download(const std::string& url) {
     }
     return out.str();
 }
+
+string HTTPDownloader::makeURL(int argc, const char * argv[])
+{
+    if(argc > 1)
+    {
+        string input;
+        for(int i = 1; i < argc; i++) {
+            input += argv[i];
+        }
+        string url = "http://api.openweathermap.org/data/2.5/weather?q="
+        + input
+        + "&appid=d21991d7851f849bfe8cc24d12c795d0&units=metric&lang=fr";
+        return url;
+    }
+    else
+    {
+        return "";
+    }
+}
