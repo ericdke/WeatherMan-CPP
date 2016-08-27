@@ -8,19 +8,21 @@
 
 #include "Downloader.hpp"
 #include "JSONReader.hpp"
-#include "CurrentWeather.hpp"
 
 using namespace std;
 
 int main(int argc, const char * argv[])
 {
     HTTPDownloader downloader;
-    JSONReader reader;
     string url = downloader.makeURL(argc, argv);
     if (url != "")
     {
+        cout << "Downloading..." << endl;
         string content = downloader.download(url);
+        JSONReader reader;
+        cout << "Parsing..." << endl;
         CurrentWeather weather = reader.parse(content);
+        cout << "Result:\n" << endl;
         cout << weather.description() << endl;
         return 0;
     }

@@ -8,9 +8,9 @@
 
 #include "Utilities.hpp"
 
-std::string Utilities::float_to_string(float f)
+std::string Utilities::float_to_string(float f, int p)
 {
     std::stringstream stream;
-    stream << std::fixed << std::setprecision(1) << f;
+    stream << std::fixed << std::setprecision(p) << f;
     return stream.str();
 }

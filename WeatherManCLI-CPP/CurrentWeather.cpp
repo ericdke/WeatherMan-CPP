@@ -27,13 +27,14 @@ string CurrentWeather::wind_direction_compass()
 string CurrentWeather::description()
 {
     DateTime dt = date_formatted();
-    string a = dt.date + ", " + dt.time;
-    string b = Utilities::float_to_string(temp);
-    string c = city + " (" + country + "), le " + a + ". Température: " + b + "°C. ";
-    string d = c + "Temps: " + category + " (" + sub_category + "). ";
+    string dts = dt.date + ", " + dt.time;
+    string cel = Utilities::float_to_string(temp, 1);
+    string ci = city + " (" + country + "), le " + dts + ".\n";
+    string te = "Température: " + cel + "°C.\n";
+    string ca = ci + te + "Temps: " + category + " (" + sub_category + ").\n";
     // TODO: check if wind
-    string w = Utilities::float_to_string(wind_speed_kmh());
-    string desc = d + "Vent: " + wind_direction_compass() + " à " + w + " km/h.";
+    string w = Utilities::float_to_string(wind_speed_kmh(), 1);
+    string desc = ca + "Vent: " + wind_direction_compass() + " à " + w + " km/h.";
     return desc;
 }
 
