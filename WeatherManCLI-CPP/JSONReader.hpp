@@ -13,6 +13,7 @@
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/foreach.hpp>
 #include "CurrentWeather.hpp"
+#include <sstream>
 
 class JSONReader {
 public:

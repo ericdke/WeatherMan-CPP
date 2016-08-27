@@ -8,8 +8,7 @@
 
 #include "JSONReader.hpp"
 #include "CurrentWeather.hpp"
-#include <sstream>
-#include <iostream>
+
 
 using namespace std;
 using namespace boost::property_tree;

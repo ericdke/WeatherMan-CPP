@@ -7,14 +7,7 @@
 //
 
 #include "CurrentWeather.hpp"
-#include <cmath>
-#include <vector>
-#include <ctime>
-//#include <ostream>
-//#include <iostream>
-#include <boost/lexical_cast.hpp>
-#include <iostream>
-#include <iomanip>
+#include "Utilities.hpp"
 
 using namespace std;
 
@@ -33,20 +26,18 @@ string CurrentWeather::wind_direction_compass()
 
 string CurrentWeather::description()
 {
-    string d = date_formatted();
-    
-    stringstream stream;
-    stream << fixed << setprecision(1) << temp;
-    string st = stream.str();
-    string s = city + " (" + country + "), le " + d + ". Température: ";
-    string te = boost::lexical_cast<string>(st);
+    DateTime dt = date_formatted();
+    string a = dt.date + ", " + dt.time;
+    string b = Utilities::float_to_string(temp);
+    string c = city + " (" + country + "), le " + a + ". Température: " + b + "°C. ";
+    string d = c + "Temps: " + category + " (" + sub_category + "). ";
     // TODO: check if wind
-    string ws = boost::lexical_cast<string>(wind_speed_kmh());
-    string desc = s + te + "°C, temps: " + category + " (" + sub_category + "), vent: direction " + wind_direction_compass() + " à " + ws + " km/h.";
+    string w = Utilities::float_to_string(wind_speed_kmh());
+    string desc = d + "Vent: " + wind_direction_compass() + " à " + w + " km/h.";
     return desc;
 }
 
-string CurrentWeather::date_formatted()
+DateTime CurrentWeather::date_formatted()
 {
     time_t temps;
     struct tm datetime;
@@ -56,9 +47,10 @@ string CurrentWeather::date_formatted()
     datetime = *localtime(&temps);
     strftime(format_date, 32, "%d/%m/%Y", &datetime);
     strftime(format_temps, 32, "%Hh%M", &datetime);
-    string fd = (string) format_date;
-    string ft = (string) format_temps;
-    return fd + ", " + ft;
+    DateTime dt;
+    dt.date = (string) format_date;
+    dt.time = (string) format_temps;
+    return dt;
 }
 
 

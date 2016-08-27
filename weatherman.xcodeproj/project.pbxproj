@@ -13,6 +13,7 @@
 		C715B2891D71A7E6008A0A40 /* libboost_serialization.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C715B2881D71A7E6008A0A40 /* libboost_serialization.a */; };
 		C715B28C1D71B4DB008A0A40 /* JSONReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715B28A1D71B4DB008A0A40 /* JSONReader.cpp */; };
 		C715B28F1D71BC51008A0A40 /* CurrentWeather.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715B28D1D71BC51008A0A40 /* CurrentWeather.cpp */; };
+		C715B2921D71EDB1008A0A40 /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715B2901D71EDB1008A0A40 /* Utilities.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,8 @@
 		C715B28B1D71B4DB008A0A40 /* JSONReader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = JSONReader.hpp; sourceTree = "<group>"; };
 		C715B28D1D71BC51008A0A40 /* CurrentWeather.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CurrentWeather.cpp; sourceTree = "<group>"; };
 		C715B28E1D71BC51008A0A40 /* CurrentWeather.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CurrentWeather.hpp; sourceTree = "<group>"; };
+		C715B2901D71EDB1008A0A40 /* Utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utilities.cpp; sourceTree = "<group>"; };
+		C715B2911D71EDB1008A0A40 /* Utilities.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Utilities.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 				C715B28A1D71B4DB008A0A40 /* JSONReader.cpp */,
 				C715B28E1D71BC51008A0A40 /* CurrentWeather.hpp */,
 				C715B28D1D71BC51008A0A40 /* CurrentWeather.cpp */,
+				C715B2911D71EDB1008A0A40 /* Utilities.hpp */,
+				C715B2901D71EDB1008A0A40 /* Utilities.cpp */,
 				C715B2831D71A6C5008A0A40 /* Downloader.hpp */,
 				C715B2821D71A6C5008A0A40 /* Downloader.cpp */,
 			);
@@ -155,6 +160,7 @@
 				C715B28C1D71B4DB008A0A40 /* JSONReader.cpp in Sources */,
 				C715B28F1D71BC51008A0A40 /* CurrentWeather.cpp in Sources */,
 				C715B27C1D71A663008A0A40 /* main.cpp in Sources */,
+				C715B2921D71EDB1008A0A40 /* Utilities.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

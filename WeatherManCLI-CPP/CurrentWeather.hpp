@@ -10,6 +10,15 @@
 #define CurrentWeather_hpp
 
 #include <iostream>
+#include <cmath>
+#include <vector>
+#include <ctime>
+#include <iomanip>
+
+struct DateTime {
+    std::string date;
+    std::string time;
+};
 
 class CurrentWeather {
 public:
@@ -25,7 +34,7 @@ public:
     std::string wind_direction_compass();
     std::string description();
 private:
-    std::string date_formatted();
+    DateTime date_formatted();
 };
 
 #endif /* CurrentWeather_hpp */

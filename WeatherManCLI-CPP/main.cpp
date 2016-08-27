@@ -9,9 +9,7 @@
 #include "Downloader.hpp"
 #include "JSONReader.hpp"
 #include "CurrentWeather.hpp"
-#include <iostream>
-#include <boost/property_tree/json_parser.hpp>
-#include <boost/foreach.hpp>
+
 using namespace std;
 
 int main(int argc, const char * argv[])
@@ -23,14 +21,6 @@ int main(int argc, const char * argv[])
     {
         string content = downloader.download(url);
         CurrentWeather weather = reader.parse(content);
-        cout << weather.temp << endl;
-        cout << weather.city << endl;
-        cout << weather.country << endl;
-        cout << weather.wind_speed_kmh() << endl;
-        cout << weather.wind_direction_compass() << endl;
-        cout << weather.category << endl;
-        cout << weather.sub_category << endl;
-        cout << weather.icon_url << endl;
         cout << weather.description() << endl;
         return 0;
     }
