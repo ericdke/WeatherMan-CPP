@@ -10,19 +10,17 @@
 #include "Downloader.hpp"
 #include "JSONReader.hpp"
 
-using namespace std;
-
 int main(int argc, const char * argv[])
 {
     HTTPDownloader downloader;
     
-    string url = downloader.makeURL(argc, argv);
+    std::string url = downloader.makeURL(argc, argv);
     
     if (url != "")
     {
         print("\nDownloading data...");
         
-        string json = downloader.download(url);
+        std::string json = downloader.download(url);
         
         JSONReader reader;
         
