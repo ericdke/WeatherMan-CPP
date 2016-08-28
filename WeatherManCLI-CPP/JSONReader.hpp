@@ -20,7 +20,6 @@ public:
     CurrentWeather parse(std::string const& json);
 private:
     boost::property_tree::ptree tree;
-    CurrentWeather weather;
 };
 
 #endif /* JSONReader_hpp */

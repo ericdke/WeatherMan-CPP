@@ -9,7 +9,6 @@
 #include "JSONReader.hpp"
 #include "CurrentWeather.hpp"
 
-
 using namespace std;
 using namespace boost::property_tree;
 
@@ -20,6 +19,8 @@ CurrentWeather JSONReader::parse(string const& json)
     istringstream j(json);
     // from boost::property_tree, populates our tree from the JSON
     read_json(j, tree);
+    // the class instance we return as value
+    CurrentWeather weather;
     // find the key then get its typed value
     weather.temp = tree.get_child("main.temp").get_value<float>();
     weather.city = tree.get_child("name").get_value<string>();

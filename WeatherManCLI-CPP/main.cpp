@@ -11,25 +11,38 @@
 
 using namespace std;
 
+void print(string const& s)
+{
+    cout << s << endl;
+}
+
 int main(int argc, const char * argv[])
 {
-    cout << "\nCreating request..." << endl;
     HTTPDownloader downloader;
+    
     string url = downloader.makeURL(argc, argv);
+    
     if (url != "")
     {
-        cout << "Downloading data..." << endl;
-        string content = downloader.download(url);
+        print("\nDownloading data...");
+        
+        string json = downloader.download(url);
+        
         JSONReader reader;
-        cout << "Parsing response..." << endl;
-        CurrentWeather weather = reader.parse(content);
-        cout << "\nResult:\n" << endl;
-        cout << weather.description() << endl;
+        
+        print("Parsing response...");
+        
+        CurrentWeather weather = reader.parse(json);
+        
+        print("\nResult:\n");
+        
+        print(weather.description());
+        
         return 0;
     }
     else
     {
-        cout << "Usage:\n\tweatherman city,country" << endl;
+        print("Usage:\n\tweatherman city,country");
         return 1;
     }
 }
