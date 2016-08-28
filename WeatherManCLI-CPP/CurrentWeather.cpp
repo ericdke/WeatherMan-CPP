@@ -20,19 +20,21 @@ string CurrentWeather::wind_direction_compass()
 {
     vector<string> compass = {"Nord","Nord Nord-Est","Nord-Est","Est-Nord-Est","Est","Est-Sud-Est","Sud-Est","Sud-Sud-Est","Sud","Sud-Sud-Ouest","Sud-Ouest","Ouest-Sud-Ouest","Ouest","Ouest-Nord-Ouest","Nord-Ouest","Nord-Nord-Ouest"};
     float wd = (wind_direction / 22.5) + 0.5;
+    // % (modulo operator) is not available for floats, use fmod
     int index = fmod(wd, 16);
     return compass[index];
 }
 
 string CurrentWeather::description()
 {
+    // DateTime is a struct defined in the header
     DateTime dt = date_formatted();
     string dts = dt.date + ", " + dt.time;
     string cel = Utilities::float_to_string(temp, 1);
     string ci = city + " (" + country + "), le " + dts + ".\n";
     string te = "Température: " + cel + "°C.\n";
     string ca = ci + te + "Temps: " + category + " (" + sub_category + ").\n";
-    // TODO: check if wind
+    // TODO: check if wind exists in API response before using it
     string w = Utilities::float_to_string(wind_speed_kmh(), 1);
     string desc = ca + "Vent: " + wind_direction_compass() + " à " + w + " km/h.\n";
     return desc;

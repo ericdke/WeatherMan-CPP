@@ -18,20 +18,9 @@
 class JSONReader {
 public:
     CurrentWeather parse(std::string const& json);
-    const void print_source();
 private:
-    std::string source;
     boost::property_tree::ptree tree;
     CurrentWeather weather;
-    void print(boost::property_tree::ptree const& ptr)
-    {
-        boost::property_tree::ptree::const_iterator end = ptr.end();
-        for (boost::property_tree::ptree::const_iterator iter = ptr.begin(); iter != end; ++iter)
-        {
-            std::cout << iter->first << ": " << iter->second.get_value<std::string>() << std::endl;
-            print(iter->second);
-        }
-    }
 };
 
 #endif /* JSONReader_hpp */

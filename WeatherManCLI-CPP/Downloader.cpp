@@ -6,6 +6,7 @@
 //  Copyright © 2016 AYA.io. All rights reserved.
 //
 
+// -----
 /**
  * HTTPDownloader.cpp
  *
@@ -48,17 +49,21 @@ string HTTPDownloader::download(const std::string& url) {
         fprintf(stderr, "curl_easy_perform() failed: %s\n",
                 curl_easy_strerror(res));
     }
+    
     return out.str();
 }
+// -----
 
 string HTTPDownloader::makeURL(int argc, const char * argv[])
 {
     if(argc > 1)
     {
+        // make a single string from all CLI input
         string input;
         for(int i = 1; i < argc; i++) {
             input += argv[i];
         }
+        // TODO: percent escape accented characters
         string url = "http://api.openweathermap.org/data/2.5/weather?q="
         + input
         + "&appid=d21991d7851f849bfe8cc24d12c795d0&units=metric&lang=fr";
