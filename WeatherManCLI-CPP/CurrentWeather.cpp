@@ -7,7 +7,6 @@
 //
 
 #include "CurrentWeather.hpp"
-#include "Utilities.hpp"
 
 using namespace std;
 
@@ -30,12 +29,12 @@ string CurrentWeather::description()
     // DateTime is a struct defined in the header
     DateTime dt = date_formatted();
     string dts = dt.date + ", " + dt.time;
-    string cel = Utilities::float_to_string(temp, 1);
+    string cel = float_to_string(temp, 1);
     string ci = city + " (" + country + "), le " + dts + ".\n";
     string te = "Température: " + cel + "°C.\n";
     string ca = ci + te + "Temps: " + category + " (" + sub_category + ").\n";
     // TODO: check if wind exists in API response before using it
-    string w = Utilities::float_to_string(wind_speed_kmh(), 1);
+    string w = float_to_string(wind_speed_kmh(), 1);
     string desc = ca + "Vent: " + wind_direction_compass() + " à " + w + " km/h.\n";
     return desc;
 }

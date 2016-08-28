@@ -6,15 +6,11 @@
 //  Copyright © 2016 AYA.io. All rights reserved.
 //
 
+#include "Utils.hpp"
 #include "Downloader.hpp"
 #include "JSONReader.hpp"
 
 using namespace std;
-
-void print(string const& s)
-{
-    cout << s << endl;
-}
 
 int main(int argc, const char * argv[])
 {

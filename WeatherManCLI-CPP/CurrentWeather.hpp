@@ -14,6 +14,7 @@
 #include <vector>
 #include <ctime>
 #include <iomanip>
+#include "Utils.hpp"
 
 struct DateTime {
     std::string date;
