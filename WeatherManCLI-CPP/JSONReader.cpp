@@ -14,10 +14,11 @@ using namespace boost::property_tree;
 
 CurrentWeather JSONReader::parse(string const& json)
 {
-    // read_json wants either a filename or a stream (of content)
-    // so first we make our JSON string a stringstream
+    // read_json wants either a filename or a stream
+    // so we make our JSON string a stringstream
     istringstream j(json);
-    // from boost::property_tree, populates our tree from the JSON
+    // populate a tree with the JSON
+    ptree tree;
     read_json(j, tree);
     // the class instance we return as value
     CurrentWeather weather;

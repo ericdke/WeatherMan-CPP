@@ -18,8 +18,6 @@
 class JSONReader {
 public:
     CurrentWeather parse(std::string const& json);
-private:
-    boost::property_tree::ptree tree;
 };
 
 #endif /* JSONReader_hpp */
