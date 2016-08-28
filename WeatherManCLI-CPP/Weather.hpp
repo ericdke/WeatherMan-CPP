@@ -1,13 +1,13 @@
 //
-//  CurrentWeather.hpp
+//  Weather.hpp
 //  weatherman
 //
 //  Created by ERIC DEJONCKHEERE on 27/08/2016.
 //  Copyright © 2016 AYA.io. All rights reserved.
 //
 
-#ifndef CurrentWeather_hpp
-#define CurrentWeather_hpp
+#ifndef Weather_hpp
+#define Weather_hpp
 
 #include <iostream>
 #include <cmath>
@@ -21,7 +21,7 @@ struct DateTime {
     std::string time;
 };
 
-class CurrentWeather {
+class Weather {
 public:
     float temp;
     std::string city;
@@ -38,4 +38,4 @@ private:
     DateTime date_formatted();
 };
 
-#endif /* CurrentWeather_hpp */
+#endif /* Weather_hpp */

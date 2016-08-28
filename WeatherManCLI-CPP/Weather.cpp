@@ -6,16 +6,16 @@
 //  Copyright © 2016 AYA.io. All rights reserved.
 //
 
-#include "CurrentWeather.hpp"
+#include "Weather.hpp"
 
 using namespace std;
 
-float CurrentWeather::wind_speed_kmh()
+float Weather::wind_speed_kmh()
 {
     return floor(((wind_speed * 3.6) * 5 + 0.5) / 5);
 }
 
-string CurrentWeather::wind_direction_compass()
+string Weather::wind_direction_compass()
 {
     vector<string> compass = {"Nord","Nord Nord-Est","Nord-Est","Est-Nord-Est","Est","Est-Sud-Est","Sud-Est","Sud-Sud-Est","Sud","Sud-Sud-Ouest","Sud-Ouest","Ouest-Sud-Ouest","Ouest","Ouest-Nord-Ouest","Nord-Ouest","Nord-Nord-Ouest"};
     float wd = (wind_direction / 22.5) + 0.5;
@@ -24,7 +24,7 @@ string CurrentWeather::wind_direction_compass()
     return compass[index];
 }
 
-string CurrentWeather::description()
+string Weather::description()
 {
     // DateTime is a struct defined in the header
     DateTime dt = date_formatted();
@@ -39,7 +39,7 @@ string CurrentWeather::description()
     return desc;
 }
 
-DateTime CurrentWeather::date_formatted()
+DateTime Weather::date_formatted()
 {
     time_t temps;
     struct tm datetime;

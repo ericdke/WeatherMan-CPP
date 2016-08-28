@@ -12,12 +12,12 @@
 #include <iostream>
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/foreach.hpp>
-#include "CurrentWeather.hpp"
+#include "Weather.hpp"
 #include <sstream>
 
 class JSONReader {
 public:
-    CurrentWeather parse(std::string const& json);
+    Weather parse(std::string const& json);
 };
 
 #endif /* JSONReader_hpp */

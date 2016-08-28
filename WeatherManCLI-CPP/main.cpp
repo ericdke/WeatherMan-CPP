@@ -28,11 +28,11 @@ int main(int argc, const char * argv[])
         
         print("Parsing response...");
         
-        CurrentWeather weather = reader.parse(json);
+        Weather w = reader.parse(json);
         
         print("\nResult:\n");
         
-        print(weather.description());
+        print(w.description());
         
         return 0;
     }
