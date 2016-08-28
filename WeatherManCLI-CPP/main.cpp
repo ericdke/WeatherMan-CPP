@@ -12,21 +12,21 @@
 
 int main(int argc, const char * argv[])
 {
-    HTTPDownloader downloader;
+    HTTPDownloader dl;
     
-    std::string url = downloader.makeURL(argc, argv);
+    std::string url = dl.makeURL(argc, argv);
     
     if (url != "")
     {
         print("\nDownloading data...");
         
-        std::string json = downloader.download(url);
+        std::string json = dl.download(url);
         
-        JSONReader reader;
+        JSONReader rd;
         
         print("Parsing response...");
         
-        Weather w = reader.parse(json);
+        Weather w = rd.parse(json);
         
         print("\nResult:\n");
         
