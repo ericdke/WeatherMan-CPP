@@ -22,18 +22,16 @@ Weather JSONReader::parse(string const& json)
     read_json(j, tree);
     // the class instance we return as value
     Weather w;
-    // find the key then get its typed value
-    w.temp = tree.get_child("main.temp").get_value<float>();
-    w.city = tree.get_child("name").get_value<string>();
-    w.country = tree.get_child("sys.country").get_value<string>();
-    w.wind_speed = tree.get_child("wind.speed").get_value<float>();
-    w.wind_direction = tree.get_child("wind.deg").get_value<float>();
-    // TODO: just take the last object in the array instead of looping
-    BOOST_FOREACH(ptree::value_type& obj, tree.get_child("weather"))
-    {
-        w.category = obj.second.get_child("main").get_value<string>();
-        w.icon_url = "http://openweathermap.org/img/w/" + obj.second.get_child("icon").get_value<string>() + ".png";
-        w.sub_category = obj.second.get_child("description").get_value<string>();
-    }
+    // find the key and cast the value
+    w.temp = tree.get<float>("main.temp");
+    w.city = tree.get<string>("name");
+    w.country = tree.get<string>("sys.country");
+    w.wind_speed = tree.get<float>("wind.speed");
+    w.wind_direction = tree.get<float>("wind.deg");
+    // A JSON array becomes a node where each item is a child node with an empty name.
+    ptree it = tree.get_child("weather").front().second;
+    w.category = it.get<string>("main");
+    w.icon_url = "http://openweathermap.org/img/w/" + it.get<string>("icon") + ".png";
+    w.sub_category = it.get<string>("description");
     return w;
 }
