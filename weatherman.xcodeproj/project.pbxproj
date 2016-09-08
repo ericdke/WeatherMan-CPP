@@ -14,6 +14,8 @@
 		C715B28C1D71B4DB008A0A40 /* JSONReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715B28A1D71B4DB008A0A40 /* JSONReader.cpp */; };
 		C715B28F1D71BC51008A0A40 /* Weather.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715B28D1D71BC51008A0A40 /* Weather.cpp */; };
 		C715B2BC1D733D6B008A0A40 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715B2BA1D733D6B008A0A40 /* Utils.cpp */; };
+		C7628C351D81F70B00670EFA /* librestclient-cpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7628C341D81F70B00670EFA /* librestclient-cpp.a */; };
+		C7628C381D81FF6300670EFA /* URLResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7628C361D81FF6300670EFA /* URLResult.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +43,9 @@
 		C715B28E1D71BC51008A0A40 /* Weather.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Weather.hpp; sourceTree = "<group>"; };
 		C715B2BA1D733D6B008A0A40 /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
 		C715B2BB1D733D6B008A0A40 /* Utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Utils.hpp; sourceTree = "<group>"; };
+		C7628C341D81F70B00670EFA /* librestclient-cpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "librestclient-cpp.a"; path = "../../../../../usr/local/lib/librestclient-cpp.a"; sourceTree = "<group>"; };
+		C7628C361D81FF6300670EFA /* URLResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = URLResult.cpp; sourceTree = "<group>"; };
+		C7628C371D81FF6300670EFA /* URLResult.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = URLResult.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7628C351D81F70B00670EFA /* librestclient-cpp.a in Frameworks */,
 				C715B2891D71A7E6008A0A40 /* libboost_serialization.a in Frameworks */,
 				C715B2871D71A6FC008A0A40 /* libcurl.tbd in Frameworks */,
 			);
@@ -85,6 +91,8 @@
 				C715B28D1D71BC51008A0A40 /* Weather.cpp */,
 				C715B2831D71A6C5008A0A40 /* Downloader.hpp */,
 				C715B2821D71A6C5008A0A40 /* Downloader.cpp */,
+				C7628C371D81FF6300670EFA /* URLResult.hpp */,
+				C7628C361D81FF6300670EFA /* URLResult.cpp */,
 			);
 			name = weatherman;
 			path = "WeatherManCLI-CPP";
@@ -93,6 +101,7 @@
 		C715B2851D71A6FC008A0A40 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7628C341D81F70B00670EFA /* librestclient-cpp.a */,
 				C715B2881D71A7E6008A0A40 /* libboost_serialization.a */,
 				C715B2861D71A6FC008A0A40 /* libcurl.tbd */,
 			);
@@ -158,6 +167,7 @@
 			files = (
 				C715B2841D71A6C5008A0A40 /* Downloader.cpp in Sources */,
 				C715B28C1D71B4DB008A0A40 /* JSONReader.cpp in Sources */,
+				C7628C381D81FF6300670EFA /* URLResult.cpp in Sources */,
 				C715B28F1D71BC51008A0A40 /* Weather.cpp in Sources */,
 				C715B2BC1D733D6B008A0A40 /* Utils.cpp in Sources */,
 				C715B27C1D71A663008A0A40 /* main.cpp in Sources */,
@@ -262,6 +272,7 @@
 					"$(inherited)",
 					/usr/local/Cellar/boost/1.59.0/lib,
 				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -274,6 +285,7 @@
 					"$(inherited)",
 					/usr/local/Cellar/boost/1.59.0/lib,
 				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -14,13 +14,13 @@ int main(int argc, const char * argv[])
 {
     HTTPDownloader dl;
     
-    std::string url = dl.makeURL(argc, argv);
+    URLResult u = dl.makeURL(argc, argv);
     
-    if (url != "")
+    if(u.success)
     {
         print("\nDownloading data...");
         
-        std::string json = dl.download(url);
+        std::string json = dl.download(u.url);
         
         JSONReader rd;
         
