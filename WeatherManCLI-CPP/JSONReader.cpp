@@ -20,11 +20,11 @@ Weather JSONReader::parse(string const& json)
     // populate a tree with the JSON
     ptree tree;
     read_json(j, tree);
-    // the class instance we return as value
-    Weather w;
     // error handling
     check_code(&tree);
-    // get values
+    // the class instance we return as value
+    Weather w;
+    // get values from the tree
     w.temp = tree.get<float>("main.temp");
     w.city = tree.get<string>("name");
     w.country = tree.get<string>("sys.country");
