@@ -37,17 +37,17 @@ Weather JSONReader::parse(string const& json)
     return w;
 }
 
-void JSONReader::check_code(boost::property_tree::ptree* tree)
+void JSONReader::check_code(ptree* tree)
 {
     auto cod = tree->get<string>("cod");
     if(cod != "200")
     {
         if(cod == "404")
         {
-            std::cout << "\nERROR: does not exist." << std::endl;
+            cout << "\nERROR: does not exist." << endl;
             exit(1);
         }
-        std::cout << "\nERROR: " << cod << std::endl;
+        cout << "\nERROR: " << cod << endl;
         exit(1);
     }
 }
