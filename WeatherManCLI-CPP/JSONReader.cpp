@@ -22,7 +22,18 @@ Weather JSONReader::parse(string const& json)
     read_json(j, tree);
     // the class instance we return as value
     Weather w;
-    // find the key and cast the value
+
+    auto cod = tree.get<string>("cod");
+    if(cod != "200")
+    {
+        if(cod == "404")
+        {
+            std::cout << "\nERROR: does not exist." << std::endl;
+            exit(1);
+        }
+        std::cout << "\nERROR: " << cod << std::endl;
+        exit(1);
+    }
     w.temp = tree.get<float>("main.temp");
     w.city = tree.get<string>("name");
     w.country = tree.get<string>("sys.country");
