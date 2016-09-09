@@ -22,8 +22,24 @@ Weather JSONReader::parse(string const& json)
     read_json(j, tree);
     // the class instance we return as value
     Weather w;
+    // error handling
+    check_code(&tree);
+    // get values
+    w.temp = tree.get<float>("main.temp");
+    w.city = tree.get<string>("name");
+    w.country = tree.get<string>("sys.country");
+    w.wind_speed = tree.get<float>("wind.speed");
+    w.wind_direction = tree.get<float>("wind.deg");
+    // A JSON array becomes a node where each item is a child node with an empty name.
+    ptree it = tree.get_child("weather").front().second;
+    w.category = it.get<string>("main");
+    w.sub_category = it.get<string>("description");
+    return w;
+}
 
-    auto cod = tree.get<string>("cod");
+void JSONReader::check_code(boost::property_tree::ptree* tree)
+{
+    auto cod = tree->get<string>("cod");
     if(cod != "200")
     {
         if(cod == "404")
@@ -34,15 +50,4 @@ Weather JSONReader::parse(string const& json)
         std::cout << "\nERROR: " << cod << std::endl;
         exit(1);
     }
-    w.temp = tree.get<float>("main.temp");
-    w.city = tree.get<string>("name");
-    w.country = tree.get<string>("sys.country");
-    w.wind_speed = tree.get<float>("wind.speed");
-    w.wind_direction = tree.get<float>("wind.deg");
-    // A JSON array becomes a node where each item is a child node with an empty name.
-    ptree it = tree.get_child("weather").front().second;
-    w.category = it.get<string>("main");
-    w.icon_url = "http://openweathermap.org/img/w/" + it.get<string>("icon") + ".png";
-    w.sub_category = it.get<string>("description");
-    return w;
 }

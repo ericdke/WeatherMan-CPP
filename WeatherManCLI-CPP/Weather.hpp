@@ -28,7 +28,6 @@ public:
     std::string country;
     std::string category;
     std::string sub_category;
-    std::string icon_url;
     float wind_speed;
     float wind_direction;
     float wind_speed_kmh();

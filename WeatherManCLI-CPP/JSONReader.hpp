@@ -16,6 +16,7 @@
 #include <sstream>
 
 class JSONReader {
+    void check_code(boost::property_tree::ptree* tree);
 public:
     Weather parse(std::string const& json);
 };
